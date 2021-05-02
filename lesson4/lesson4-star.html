@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name"> <br>
+    <input type="text" id="phone"> <br>
+    <input type="text" id="email"> <br>
+    <input type="text" id="text"> <br>
+
+    <button type="button">Click me</button>
+    <script>
+        let button = document.querySelector("button");
+        let name = document.querySelector("#name");
+        let phone = document.querySelector("#phone");
+        let email = document.querySelector("#email");
+        let text = document.querySelector("#text");
+
+        let green = "1px solid green";
+        let red = "1px solid red";
+
+        let nameRegex = /^[A-Za-z]+$/;
+        let phoneRegex = /^\+\d{1}\(\d{3}\)\d{3}\-\d{4}$/;
+        let emailRegex = /^([A-Za-z0-9-.])+@([A-Za-z0-9-.])+\.([A-Za-z]{2})$/
+        let textRegex = /[a-zA-Z0-9\s]+/
+
+        button.addEventListener("click", function () {
+
+            if (name.value.match(nameRegex)) {
+                name.style.border = green;
+            }
+            else {
+                name.style.border = red;
+            }
+
+            if (phone.value.match(phoneRegex)) {
+                phone.style.border = green;
+            }
+            else {
+                phone.style.border = red;
+            }
+
+            if (email.value.match(phoneRegex)) {
+                email.style.border = green;
+            }
+            else {
+                email.style.border = red;
+            }
+
+            if (text.value.match(textRegex)) {
+                text.style.border = green;
+            }
+            else {
+                text.style.border = red;
+            }
+        });
+    </script>
+</body>
+
+</html>
